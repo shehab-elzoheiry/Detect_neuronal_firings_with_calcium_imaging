@@ -1,10 +1,7 @@
+% This funciton is a butterband filter, it take the signal, sampling rate, low and high frequencies, and lastly the order.
+% The output is filtered signal.
+
 function L=butterband(X,sampling_rate,flo,fhi,order)
-% if size(X,1)>size(X,2)
-% X=X';
-% end
-% if size(X,2)>size(X,1)
-% X=X';
-% end
 
 nsample=length(X);
 period = nsample/sampling_rate;
@@ -17,8 +14,7 @@ r_hi = ((i-1)*hzpbin/fhi).^(2*order);
 factor_hi0 = 1./(1 + r_hi);
 
 factor_lo=[factor_lo0,fliplr(factor_lo0(2:end-1))];
-factor_hi=[factor_hi0,fliplr(factor_hi0(2:end-1))];
-                 
+factor_hi=[factor_hi0,fliplr(factor_hi0(2:end-1))];              
           
             fftx = fft(X');  
             if length(fftx)>length(factor_lo)
@@ -27,5 +23,3 @@ factor_hi=[factor_hi0,fliplr(factor_hi0(2:end-1))];
             end
             fftx_l = fftx.* sqrt(factor_lo.* factor_hi);            
             L=ifft(fftx_l);
-            
-       
