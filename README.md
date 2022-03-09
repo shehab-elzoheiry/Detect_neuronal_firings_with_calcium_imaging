@@ -1,4 +1,4 @@
-# detect_neuronal_firings_with_calcium_imaging
+# Detect_neuronal_firings_with_calcium_imaging
 
 This is part of the project published in [Elzoheiry et al 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7820691/pdf/10.1177_0271678X19892657.pdf). For more details check Figure 2a.
 
